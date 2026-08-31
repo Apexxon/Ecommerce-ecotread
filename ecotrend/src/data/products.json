@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Camiseta de Algodão Orgânico",
+    "category": "roupas",
+    "price": 79.90,
+    "image": "camiseta.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Sabonete Natural de Lavanda",
+    "category": "beleza",
+    "price": 24.50,
+    "image": "sabonete.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Jogo de Panos de Prato de Bambu",
+    "category": "casa",
+    "price": 45.00,
+    "image": "panos.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Carregador Solar Portátil",
+    "category": "tecnologia",
+    "price": 189.90,
+    "image": "carregador.jpg"
+  }
+]
