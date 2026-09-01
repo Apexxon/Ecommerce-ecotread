@@ -1,15 +1,226 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;500;600&display=swap');
+ 
+:root {
+  --bg: #1e2a1b;
+  --surface: #f7f4ea;
+  --ink: #22301f;
+  --ink-soft: #5c6653;
+  --parchment: #ede7d6;
+  --parchment-soft: #b9c2ad;
+  --moss: #5b6b44;
+  --moss-dark: #46512f;
+  --moss-soft: #8aa06b;
+  --clay: #96552a;
+  --clay-dark: #7c4621;
+  --line: #47593e;
+  --line-card: #ded6bd;
+ 
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'Work Sans', system-ui, sans-serif;
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--parchment);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+ 
+h1, h2, h3 {
+  font-family: var(--display);
+  color: var(--ink);
+  margin: 0 0 0.4em;
+  font-weight: 600;
+}
+ 
+button {
+  font-family: var(--body);
+}
+ 
+:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
+}
+ 
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+ 
+/* Filtros (ficam direto sobre o fundo escuro) */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+ 
+.filters select {
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line-card);
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+ 
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--parchment-soft);
+}
+ 
+.filters input[type='range'] {
+  accent-color: var(--moss-soft);
+}
+ 
+/* Grade de produtos */
 .product-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
 }
+ 
 .product-card {
-border: 1px solid #dcd6c6;
-border-radius: 6px;
-padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line-card);
+  border-radius: 6px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  color: var(--ink);
 }
+ 
+.product-card h3 {
+  font-size: 17px;
+  line-height: 1.3;
+}
+ 
+.product-card p {
+  font-family: var(--display);
+  color: var(--clay);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0;
+}
+ 
+.product-card button {
+  margin-top: 6px;
+  padding: 10px 14px;
+  background: var(--moss);
+  color: var(--surface);
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+ 
+.product-card button:hover {
+  background: var(--moss-dark);
+}
+ 
+/* Carrinho */
 .cart {
-border-left: 1px solid #dcd6c6;
-padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line-card);
+  border-top: 3px solid var(--moss);
+  border-radius: 6px;
+  padding: 20px;
+  text-align: left;
+  color: var(--ink);
 }
+ 
+.cart h2 {
+  font-size: 19px;
+}
+ 
+.cart > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line-card);
+  font-size: 14px;
+}
+ 
+.cart button {
+  background: none;
+  border: none;
+  color: var(--clay);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+ 
+.cart strong {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--display);
+  font-size: 18px;
+  color: var(--ink);
+}
+ 
+/* Checkout (fica direto sobre o fundo escuro) */
+.checkout {
+  padding-top: 8px;
+}
+ 
+.checkout button {
+  padding: 12px 22px;
+  background: var(--clay);
+  color: var(--surface);
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+ 
+.checkout button:hover:not(:disabled) {
+  background: var(--clay-dark);
+}
+ 
+.checkout button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+ 
+.checkout p {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--parchment-soft);
+}
+ 
+@media (max-width: 640px) {
+  .app {
+    padding: 20px 16px 48px;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .product-card button,
+  .checkout button {
+    transition: none;
+  }
+}
+ 
