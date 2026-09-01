@@ -40,4 +40,5 @@ O projeto abre em `http://localhost:5173`.
 | Rafael | 571280 |
 
 ## Deploy
+https://ecommerce-ecotrend.vercel.app/
 
