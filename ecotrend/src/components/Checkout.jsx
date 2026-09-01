@@ -47,7 +47,7 @@ export function Checkout() {
   }
 
   return (
-    <div>
+    <div className="checkout">
       <button onClick={handleCheckout} disabled={loading}>
         {loading ? 'Processando...' : 'Finalizar Compra'}
       </button>
