@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
  
-const PRODUCTS_URL = '/src/data/products.json';
+const PRODUCTS_URL = '/products.json'; 
  
 export function useProducts() {
   const [products, setProducts] = useState([]);
