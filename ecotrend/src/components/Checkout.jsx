@@ -22,7 +22,7 @@ function simulateCheckout(cart) {
 }
 
 export function Checkout() {
-  const { cart, setCart } = useCart();
+  const { cart, clearCart } = useCart();
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
@@ -38,7 +38,7 @@ export function Checkout() {
         `Pedido #${result.orderId} confirmado! Total: R$ ${result.total.toFixed(2)}`
       );
 
-      setCart([]);
+      clearCart();
     } catch (err) {
       setMessage(err.message);
     } finally {
